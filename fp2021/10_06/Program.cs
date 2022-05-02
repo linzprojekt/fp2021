@@ -20,7 +20,7 @@ namespace _10_06
 
             Console.WriteLine("Introduceti un numar:");
 
-            int n; // Q: Ce este o variabila -> este un nume pentru o locatie in memorie
+            int n = 0; // Q: Ce este o variabila -> este un nume pentru o locatie in memorie
 
             Console.WriteLine($"Cea mai mare valoare care se poate stoca pe int este {int.MaxValue}");
             Console.WriteLine($"Cea mai mica valoare care se poate stoca pe int este {int.MinValue}");
@@ -30,7 +30,32 @@ namespace _10_06
             // short (16 biti), long (64 biti), byte (8 biti), uint (32 biti, u = unsigned), ushort (16 biti), sbyte (8 biti), ulong (64 biti)
 
 
-            // FP - C1 Oros min 1h / 1hh44min
+            string line;
+            line = Console.ReadLine();
+
+            // first try and catch blocks 
+
+            try
+            {
+                n = int.Parse(line);
+
+            }
+            catch (FormatException e )
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (OverflowException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+            catch (ArgumentNullException e)
+            {
+                Console.WriteLine(e.Message);
+            }
+
+
+
+            Console.WriteLine($"Numarul pe care l-ati introdus este: {n}");
         }
     }
 }
