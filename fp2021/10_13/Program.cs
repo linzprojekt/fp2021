@@ -49,7 +49,7 @@ namespace _10_13
                     {
                         suma = suma + i; 
                     }
-                    i = i + 1;
+                    i = i + 1; 
                 }
 
                 Console.WriteLine($"Suma numerelor de la 1 la {numar} este {suma}");
