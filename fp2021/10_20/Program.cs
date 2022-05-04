@@ -14,8 +14,63 @@ namespace _10_20
 
             // Gauss();
             // GaussV2();
+            // Triunghi();
+            // Ordonare3();
+        }
 
-            Triunghi();
+
+        /// <summary>
+        /// Se dau 3 numere. Sa se afiseze in ordine crescatoare.
+        /// </summary>
+
+        private static void Ordonare3()
+        {
+            int a, b, c;
+            Console.WriteLine("Introduceti 3 numere intregi pe o singura linie a consolei separate printr-un spatiu");
+
+            string linie = Console.ReadLine();
+            char[] seps = { ' ' };
+            string[] tokens = linie.Split(seps, StringSplitOptions.RemoveEmptyEntries);
+            
+            if (tokens.Length < 3)
+            {
+                Console.WriteLine("Nu s-au introdus 3 numere!");
+                return;
+            }
+
+            a = int.Parse(tokens[0]);
+            b = int.Parse(tokens[1]);   
+            c = int.Parse(tokens[2]);
+
+            // min = Math.Min(a, Math.Min(b,c)); 
+            // max = Math.Max(a, Math.Max(b,c));
+
+            int min, max, med; // minimul, maximul, medianul (cel din mijloc)
+            min = a;
+            if ( b < min)
+            {
+                min = b;
+            }
+            if ( c < min )
+            {
+                min = c;
+            }
+
+            max = a;
+            if ( b > max)
+            {
+                max = b;
+            }
+            if ( c > max )
+            {
+                max = c;
+            }
+
+            med = a + b + c - min - max;
+
+            Console.WriteLine($"{min}, {med}, {max}");
+            
+
         }
 
         /// <summary>
